@@ -1,0 +1,16 @@
+reset;
+model gcoloring.mod;
+data gcoloring.dat;
+
+option solver gurobi;
+solve;
+
+printf "numero min de colores requeridos: %d\n", num_colors;
+printf "asignacionn de colores:\n";
+for {v in V} {
+  printf "vertices %d: ", v;
+  for {i in 1..max_colors} {
+    if x[v, i] = 1 then printf "%d ", i;
+  }
+  printf "\n";
+}

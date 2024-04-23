@@ -1,0 +1,16 @@
+reset;
+
+model setcovering.mod;
+
+data setcovering.dat;
+
+option solver cplex;
+
+solve;
+
+printf "Conjuntos seleccionados:\n";
+for {j in M: X[j] == 1} {
+    printf "Conjunto %d\n", j;
+}
+
+printf "\nCosto total: %.2f\n", sum{j in M} C[j] * X[j];

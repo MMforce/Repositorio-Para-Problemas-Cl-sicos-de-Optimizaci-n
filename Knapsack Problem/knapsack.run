@@ -1,0 +1,14 @@
+reset;
+
+model knapsack.mod;
+
+data knapsack.dat;
+
+option solver cplex;
+
+
+solve;
+
+display MaxVal;#, VALOR, PESO,
+
+

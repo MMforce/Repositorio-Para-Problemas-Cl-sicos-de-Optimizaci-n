@@ -1,0 +1,11 @@
+reset;
+
+model TSP.mod;
+
+data TSP.dat;
+
+option solver cplex;
+
+solve;
+
+display DistanciaTotal; #,x
