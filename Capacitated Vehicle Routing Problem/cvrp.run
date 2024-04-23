@@ -1,0 +1,13 @@
+reset;
+model cvrp.mod;
+data cvrp.dat;
+option solver cplex;
+solve;
+display DistanciaTotal;
+display {i in nodos, j in nodos: i != j} x[j, i];
+
+
+
+
+
+
